@@ -1,0 +1,4 @@
+*.gguf
+.env
+logs/
+data/
