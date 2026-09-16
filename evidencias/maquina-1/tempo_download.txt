@@ -1,0 +1,4 @@
+início do pull: 2026-09-15T13:41:00-03:00
+tempo real do pull: 0:01.05
+fim do pull: 2026-09-15T13:41:01-03:00
+4.9G	/home/user/.ollama/models

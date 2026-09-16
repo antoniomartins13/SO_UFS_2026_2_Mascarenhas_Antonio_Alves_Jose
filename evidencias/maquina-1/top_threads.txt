@@ -1,0 +1,21 @@
+top - 13:45:11 up  3:05,  1 user,  load average: 2.42, 1.53, 0.63
+Threads:  14 total,   0 running,  14 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.2 us,  0.0 sy,  0.0 ni, 98.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  11961.6 total,    135.7 free,   8803.7 used,   3234.9 buff/cache     
+MiB Swap:   4096.0 total,   3572.7 free,    523.3 used.   3158.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1120 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.01 ollama
+   1123 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.05 ollama
+   1124 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.10 ollama
+   1125 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.00 ollama
+   1126 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.04 ollama
+   1127 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.00 ollama
+   1129 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.07 ollama
+   1130 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.03 ollama
+   1131 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.05 ollama
+   1132 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.01 ollama
+   1133 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.03 ollama
+   1159 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.06 ollama
+   1160 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.05 ollama
+   1161 user      20   0 2266788  35320  22296 S   0.0   0.3   0:00.12 ollama

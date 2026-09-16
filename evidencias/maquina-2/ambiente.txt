@@ -1,0 +1,161 @@
+Coletado em: 2026-09-15T12:52:52-03:00
+Modelo de referência: qwen3:8b
+
+===== uname -a =====
+Linux DESKTOP-1F600RV 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+===== /etc/os-release =====
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
+===== lscpu =====
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  12
+On-line CPU(s) list:                     0-11
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 5 5600GT with Radeon Graphics
+CPU family:                              25
+Model:                                   80
+Thread(s) per core:                      2
+Core(s) per socket:                      6
+Socket(s):                               1
+Stepping:                                0
+BogoMIPS:                                7186.33
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+Virtualization:                          AMD-V
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               192 KiB (6 instances)
+L1i cache:                               192 KiB (6 instances)
+L2 cache:                                3 MiB (6 instances)
+L3 cache:                                16 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-11
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Vulnerable: No microcode
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+===== nproc =====
+12
+
+===== free -h =====
+               total        used        free      shared  buff/cache   available
+Mem:            13Gi       8.5Gi       141Mi       3.5Mi       5.1Gi       5.1Gi
+Swap:          4.0Gi       104Ki       4.0Gi
+
+===== df -h =====
+Filesystem      Size  Used Avail Use% Mounted on
+none            6.8G     0  6.8G   0% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
+none            6.8G  4.0K  6.8G   1% /mnt/wsl
+drivers         465G  335G  131G  72% /usr/lib/wsl/drivers
+/dev/sdd       1007G   29G  928G   3% /
+none            6.8G   36K  6.8G   1% /mnt/wslg
+none            6.8G     0  6.8G   0% /usr/lib/wsl/lib
+rootfs          6.8G  2.8M  6.8G   1% /init
+none            6.8G  620K  6.8G   1% /run
+none            6.8G     0  6.8G   0% /run/lock
+none            6.8G     0  6.8G   0% /run/shm
+none            6.8G  100K  6.8G   1% /mnt/wslg/versions.txt
+none            6.8G  100K  6.8G   1% /mnt/wslg/doc
+C:\             465G  335G  131G  72% /mnt/c
+tmpfs           1.4G   20K  1.4G   1% /run/user/1000
+
+===== lsblk =====
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 356.9M  1 disk 
+sdb    8:16   0 159.4M  1 disk 
+sdc    8:32   0     4G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /var/lib/docker
+                               /mnt/wslg/distro
+                               /
+
+===== getconf CLK_TCK =====
+100
+
+===== ambiente de execução =====
+WSL2 (kernel Linux dentro de VM gerenciada pelo Windows)
+/proc/version: Linux version 6.18.33.2-microsoft-standard-WSL2 (root@f1bbfb02316b) (gcc (GCC) 13.2.0, GNU ld (GNU Binutils) 2.41) #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026
+NOTA: em WSL2 o relógio de parede (CLOCK_REALTIME) pode saltar dezenas de
+segundos ao ressincronizar com o host. Por isso 04-bench.sh mede durações
+com /proc/uptime (CLOCK_MONOTONIC). Registrar isso em Limitações.
+
+===== versões =====
+ollama: ollama version is 0.34.0
+docker: Docker version 29.1.3, build 29.1.3-0ubuntu3~24.04.2
+python3: Python 3.12.3
+curl: curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.10
+jq: jq-1.7
+
+===== ollama list =====
+NAME        ID              SIZE      MODIFIED           
+qwen3:8b    500a1f067a9f    5.2 GB    About a minute ago    
+
+===== tamanho em disco dos modelos =====
+4.9G	/home/anderson/.ollama/models
+
+===== GPU =====
+nvidia-smi não encontrado — execução em CPU. Registrar isso como limitação.
+
+===== docker ps =====
+CONTAINER ID   IMAGE                                COMMAND           CREATED              STATUS                    PORTS                                         NAMES
+b326aa408a4c   ghcr.io/open-webui/open-webui:main   "bash start.sh"   About a minute ago   Up 59 seconds (healthy)   0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp   open-webui
+
+===== ollama show qwen3:8b =====
+  Model
+    architecture        qwen3     
+    parameters          8.2B      
+    context length      40960     
+    embedding length    4096      
+    quantization        Q4_K_M    
+
+  Capabilities
+    completion    
+    tools         
+    thinking      
+
+  Parameters
+    temperature       0.6               
+    top_k             20                
+    top_p             0.95              
+    repeat_penalty    1                 
+    stop              "<|im_start|>"    
+    stop              "<|im_end|>"      
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+    ...                          
+
+
+===== digest da imagem do Open WebUI =====
+ghcr.io/open-webui/open-webui@sha256:1a6399d237dc392a2313e0ca826020b3fd5d22536357840eb63393d18dc8b924

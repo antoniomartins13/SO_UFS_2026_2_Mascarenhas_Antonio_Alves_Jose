@@ -1,0 +1,92 @@
+### Capturado em 2026-09-15T12:53:08-03:00 durante inferência ativa
+### PID do serve: 1262 | PIDs observados: 1262 1859 
+
+### ps -eo pid,ppid,stat,ni,pri,psr,pcpu,pmem,nlwp,comm (top CPU)
+    PID    PPID STAT  NI PRI PSR %CPU %MEM NLWP COMMAND
+   1859    1262 Rl     0  19   3 93.9 38.9   15 llama-server
+   1513    1490 Ssl    0  19   0 30.7  6.3   54 python3
+    100       1 S<s   -1  20   6  0.6  0.1    1 systemd-journal
+   1262     826 Sl     0  19   2  0.6  0.4   18 ollama
+      1       0 Ss     0  19   2  0.4  0.0    1 systemd
+    445       1 Ssl    0  19   4  0.4  0.6   19 dockerd
+    277       1 Ssl    0  19   7  0.3  0.4   16 containerd
+    151       1 Ss     0  19   6  0.0  0.0    1 systemd-udevd
+      6       2 Sl+    0  19   9  0.0  0.0    2 init
+    201       1 Ss     0  19   9  0.0  0.0    1 systemd-resolve
+    202       1 Ssl    0  19   8  0.0  0.0    2 systemd-timesyn
+    874       1 Ss     0  19  10  0.0  0.0    1 systemd
+    295       1 Ssl    0  19   2  0.0  0.1    2 unattended-upgr
+   1490       1 Sl     0  19  10  0.0  0.0   10 containerd-shim
+    213       1 Ss     0  19   0  0.0  0.0    1 dbus-daemon
+    239       1 Ssl    0  19   9  0.0  0.0    8 wsl-pro-service
+    232       1 Ss     0  19   7  0.0  0.0    1 systemd-logind
+    261       1 Ssl    0  19   3  0.0  0.0    4 rsyslogd
+   1559     445 Sl     0  19   1  0.0  0.0    8 docker-proxy
+
+### processos do Ollama (serve + filhos)
+    PID    PPID STAT NLWP %CPU %MEM   RSS     ELAPSED COMMAND
+   1262     826 Sl     18  0.6  0.4 60652       01:13 ollama serve
+   1859    1262 Rl     15 93.8 39.0 5569896     00:08 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+
+### threads (ps -eLf | grep ollama) — mesmo PID, LWP diferentes
+anderson    1262     826    1262  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1265  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1266  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1267  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1268  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1269  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1271  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1272  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1273  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1274  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1275  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1276  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1277  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1278  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1279  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1342  0   18 12:51 pts/0    00:00:00 ollama serve
+anderson    1262     826    1830  0   18 12:52 pts/0    00:00:00 ollama serve
+anderson    1262     826    1831  0   18 12:52 pts/0    00:00:00 ollama serve
+anderson    1859    1262    1859 93   15 12:53 pts/0    00:00:07 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1861  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1862  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1863  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1864  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1865  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1866  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1867  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1868  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1869  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1870  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1871  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1872  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1873  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+anderson    1859    1262    1874  0   15 12:53 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+
+### contagem de threads por PID via /proc
+PID 1262 -> 18 threads | cmd: ollama serve 
+PID 1859 -> 15 threads | cmd: /usr/local/lib/ollama/llama-server --model /home/anderson/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 33043 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4 
+
+### /proc/<pid>/status (estado, threads, memória)
+--- PID 1262
+Name:	ollama
+State:	S (sleeping)
+Tgid:	1262
+Pid:	1262
+PPid:	826
+VmSize:	 2562472 kB
+VmRSS:	   60652 kB
+Threads:	18
+--- PID 1859
+Name:	llama-server
+State:	R (running)
+Tgid:	1859
+Pid:	1859
+PPid:	1262
+VmSize:	 8433048 kB
+VmRSS:	 5639356 kB
+Threads:	15
+
+### conexões na porta 11434
+ESTAB 0      0               127.0.0.1:60756          127.0.0.1:11434 users:(("curl",pid=1857,fd=5))  
+ESTAB 0      0      [::ffff:127.0.0.1]:11434 [::ffff:127.0.0.1]:60756 users:(("ollama",pid=1262,fd=8))

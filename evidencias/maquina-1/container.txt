@@ -1,0 +1,5 @@
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                1336                1312                7                   13:41               ?                   00:00:17            /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+
+CONTAINER ID   NAME         CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+21a388c7f3ae   open-webui   0.29%     799.1MiB / 11.68GiB   6.68%     14.7kB / 15.3kB   431MB / 57.1MB   39

@@ -1,0 +1,1 @@
+LISTEN 0      4096                *:11434            *:*    users:(("ollama",pid=1262,fd=4))

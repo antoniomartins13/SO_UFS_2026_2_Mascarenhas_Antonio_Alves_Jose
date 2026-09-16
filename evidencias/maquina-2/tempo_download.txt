@@ -1,0 +1,4 @@
+início do pull: 2026-09-15T12:51:56-03:00
+tempo real do pull: 0:01.13
+fim do pull: 2026-09-15T12:51:57-03:00
+4.9G	/home/anderson/.ollama/models

@@ -1,0 +1,85 @@
+### Capturado em 2026-09-15T13:42:16-03:00 durante inferência ativa
+### PID do serve: 1120 | PIDs observados: 1120 1681 
+
+### ps -eo pid,ppid,stat,ni,pri,psr,pcpu,pmem,nlwp,comm (top CPU)
+    PID    PPID STAT  NI PRI PSR %CPU %MEM NLWP COMMAND
+   1681    1120 Dl     0  19   0 80.9 36.4   12 llama-server
+   1336    1312 Ssl    0  19   1 28.0  7.3   39 python3
+      1       0 Ss     0  19   4  0.9  0.1    1 systemd
+    363       1 Ssl    0  19   3  0.6  0.8   17 dockerd
+   1120     785 Sl     0  19   2  0.6  0.5   14 ollama
+    288       1 Ssl    0  19   1  0.4  0.4   13 containerd
+     86       1 Ss     0  19   5  0.1  0.0    1 systemd-udevd
+     47       1 S<s   -1  20   7  0.1  0.1    1 systemd-journal
+    829       1 Ss     0  19   6  0.1  0.1    1 systemd
+    155       1 Ss     0  19   1  0.0  0.2    1 networkd-dispat
+    339       1 Ssl    0  19   6  0.0  0.2    2 unattended-upgr
+    183       1 Ss     0  19   5  0.0  0.0    1 systemd-logind
+    194       1 Ssl    0  19   4  0.0  0.1    8 wsl-pro-service
+     64       1 Ss     0  19   5  0.0  0.1    1 systemd-resolve
+   1312       1 Sl     0  19   7  0.0  0.0   11 containerd-shim
+    786     785 Ss     0  19   2  0.0  0.0    1 bash
+    265     145 S      0  19   4  0.0  0.0    1 chronyd
+    198       1 Ssl    0  19   6  0.0  0.0    4 rsyslogd
+    147       1 Ss     0  19   0  0.0  0.0    1 dbus-daemon
+
+### processos do Ollama (serve + filhos)
+    PID    PPID STAT NLWP %CPU %MEM   RSS     ELAPSED COMMAND
+   1120     785 Sl     14  0.6  0.5 62568       01:17 ollama serve
+   1681    1120 Rl     12 81.0 36.5 4474576     00:08 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+
+### threads (ps -eLf | grep ollama) — mesmo PID, LWP diferentes
+user        1120     785    1120  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1123  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1124  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1125  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1126  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1127  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1129  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1130  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1131  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1132  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1133  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1159  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1160  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1120     785    1161  0   14 13:40 pts/0    00:00:00 ollama serve
+user        1681    1120    1681 80   12 13:42 pts/0    00:00:06 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1683  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1684  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1685  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1686  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1687  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1688  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1689  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1690  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1691  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1692  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+user        1681    1120    1693  0   12 13:42 pts/0    00:00:00 /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4
+
+### contagem de threads por PID via /proc
+PID 1120 -> 14 threads | cmd: ollama serve 
+PID 1681 -> 12 threads | cmd: /usr/local/lib/ollama/llama-server --model /home/user/.ollama/models/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f --port 37711 --host 127.0.0.1 --no-webui --offline -c 16384 -np 4 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --load-mode none --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4 
+
+### /proc/<pid>/status (estado, threads, memória)
+--- PID 1120
+Name:	ollama
+State:	S (sleeping)
+Tgid:	1120
+Pid:	1120
+PPid:	785
+VmSize:	 2266788 kB
+VmRSS:	   62568 kB
+Threads:	14
+--- PID 1681
+Name:	llama-server
+State:	D (disk sleep)
+Tgid:	1681
+Pid:	1681
+PPid:	1120
+VmSize:	 5880656 kB
+VmRSS:	 4502224 kB
+Threads:	12
+
+### conexões na porta 11434
+ESTAB 0      0               127.0.0.1:36580          127.0.0.1:11434 users:(("curl",pid=1679,fd=4))  
+ESTAB 0      0      [::ffff:127.0.0.1]:11434 [::ffff:127.0.0.1]:36580 users:(("ollama",pid=1120,fd=8))

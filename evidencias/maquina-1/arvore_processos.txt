@@ -1,0 +1,54 @@
+ollama(1120)-+-llama-server(1681)-+-{llama-server}(1683)
+             |                    |-{llama-server}(1684)
+             |                    |-{llama-server}(1685)
+             |                    |-{llama-server}(1686)
+             |                    |-{llama-server}(1687)
+             |                    |-{llama-server}(1688)
+             |                    |-{llama-server}(1689)
+             |                    |-{llama-server}(1690)
+             |                    |-{llama-server}(1691)
+             |                    |-{llama-server}(1692)
+             |                    `-{llama-server}(1693)
+             |-{ollama}(1123)
+             |-{ollama}(1124)
+             |-{ollama}(1125)
+             |-{ollama}(1126)
+             |-{ollama}(1127)
+             |-{ollama}(1129)
+             |-{ollama}(1130)
+             |-{ollama}(1131)
+             |-{ollama}(1132)
+             |-{ollama}(1133)
+             |-{ollama}(1159)
+             |-{ollama}(1160)
+             `-{ollama}(1161)
+systemd,1
+  `-init-systemd(Ub,2
+      `-SessionLeader,784
+          `-Relay(786),785
+              `-ollama,1120 serve
+                  |-llama-server,1681 --model...
+                  |   |-{llama-server},1683
+                  |   |-{llama-server},1684
+                  |   |-{llama-server},1685
+                  |   |-{llama-server},1686
+                  |   |-{llama-server},1687
+                  |   |-{llama-server},1688
+                  |   |-{llama-server},1689
+                  |   |-{llama-server},1690
+                  |   |-{llama-server},1691
+                  |   |-{llama-server},1692
+                  |   `-{llama-server},1693
+                  |-{ollama},1123
+                  |-{ollama},1124
+                  |-{ollama},1125
+                  |-{ollama},1126
+                  |-{ollama},1127
+                  |-{ollama},1129
+                  |-{ollama},1130
+                  |-{ollama},1131
+                  |-{ollama},1132
+                  |-{ollama},1133
+                  |-{ollama},1159
+                  |-{ollama},1160
+                  `-{ollama},1161

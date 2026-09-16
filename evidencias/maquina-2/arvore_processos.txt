@@ -1,0 +1,68 @@
+ollama(1262)-+-llama-server(1859)-+-{llama-server}(1861)
+             |                    |-{llama-server}(1862)
+             |                    |-{llama-server}(1863)
+             |                    |-{llama-server}(1864)
+             |                    |-{llama-server}(1865)
+             |                    |-{llama-server}(1866)
+             |                    |-{llama-server}(1867)
+             |                    |-{llama-server}(1868)
+             |                    |-{llama-server}(1869)
+             |                    |-{llama-server}(1870)
+             |                    |-{llama-server}(1871)
+             |                    |-{llama-server}(1872)
+             |                    |-{llama-server}(1873)
+             |                    `-{llama-server}(1874)
+             |-{ollama}(1265)
+             |-{ollama}(1266)
+             |-{ollama}(1267)
+             |-{ollama}(1268)
+             |-{ollama}(1269)
+             |-{ollama}(1271)
+             |-{ollama}(1272)
+             |-{ollama}(1273)
+             |-{ollama}(1274)
+             |-{ollama}(1275)
+             |-{ollama}(1276)
+             |-{ollama}(1277)
+             |-{ollama}(1278)
+             |-{ollama}(1279)
+             |-{ollama}(1342)
+             |-{ollama}(1830)
+             `-{ollama}(1831)
+systemd,1
+  `-init-systemd(Ub,2
+      `-SessionLeader,825
+          `-Relay(827),826
+              `-ollama,1262 serve
+                  |-llama-server,1859 --model...
+                  |   |-{llama-server},1861
+                  |   |-{llama-server},1862
+                  |   |-{llama-server},1863
+                  |   |-{llama-server},1864
+                  |   |-{llama-server},1865
+                  |   |-{llama-server},1866
+                  |   |-{llama-server},1867
+                  |   |-{llama-server},1868
+                  |   |-{llama-server},1869
+                  |   |-{llama-server},1870
+                  |   |-{llama-server},1871
+                  |   |-{llama-server},1872
+                  |   |-{llama-server},1873
+                  |   `-{llama-server},1874
+                  |-{ollama},1265
+                  |-{ollama},1266
+                  |-{ollama},1267
+                  |-{ollama},1268
+                  |-{ollama},1269
+                  |-{ollama},1271
+                  |-{ollama},1272
+                  |-{ollama},1273
+                  |-{ollama},1274
+                  |-{ollama},1275
+                  |-{ollama},1276
+                  |-{ollama},1277
+                  |-{ollama},1278
+                  |-{ollama},1279
+                  |-{ollama},1342
+                  |-{ollama},1830
+                  `-{ollama},1831

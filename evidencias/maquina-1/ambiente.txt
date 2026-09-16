@@ -1,0 +1,172 @@
+Coletado em: 2026-09-15T13:41:58-03:00
+Modelo de referência: qwen3:8b
+
+===== uname -a =====
+Linux DESKTOP-B3LNN05 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
+
+===== /etc/os-release =====
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
+
+===== lscpu =====
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  8
+On-line CPU(s) list:                     0-7
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 7 5700X 8-Core Processor
+CPU family:                              25
+Model:                                   33
+Thread(s) per core:                      2
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                2
+BogoMIPS:                                6800.05
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+Virtualization:                          AMD-V
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               128 KiB (4 instances)
+L1i cache:                               128 KiB (4 instances)
+L2 cache:                                2 MiB (4 instances)
+L3 cache:                                32 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-7
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Mitigation; Clear CPU buffers
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+===== nproc =====
+8
+
+===== free -h =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       8.8Gi       133Mi        44Mi       3.0Gi       2.8Gi
+Swap:          4.0Gi        92Ki       4.0Gi
+
+===== df -h =====
+Filesystem      Size  Used Avail Use% Mounted on
+none            5.9G     0  5.9G   0% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
+none            5.9G   23M  5.9G   1% /mnt/wsl
+none            5.9G  536K  5.9G   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/loop0      771M  771M     0 100% /mnt/wsl/docker-desktop/cli-tools
+drivers         238G  150G   89G  63% /usr/lib/wsl/drivers
+/dev/sdf       1007G   18G  939G   2% /
+none            5.9G   36K  5.9G   1% /mnt/wslg
+none            5.9G     0  5.9G   0% /usr/lib/wsl/lib
+rootfs          5.9G  2.8M  5.9G   1% /init
+none            5.9G  616K  5.9G   1% /run
+none            5.9G     0  5.9G   0% /run/lock
+none            5.9G     0  5.9G   0% /run/shm
+none            5.9G  100K  5.9G   1% /mnt/wslg/versions.txt
+none            5.9G  100K  5.9G   1% /mnt/wslg/doc
+C:\             238G  150G   89G  63% /mnt/c
+D:\             954G  270G  685G  29% /mnt/d
+tmpfs           5.9G     0  5.9G   0% /tmp
+none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none            1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.2G   12K  1.2G   1% /run/user/1000
+
+===== lsblk =====
+NAME  MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0   7:0    0 770.1M  1 loop /mnt/wsl/docker-desktop/cli-tools
+loop1   7:1    0 744.3M  1 loop 
+sda     8:0    0 356.9M  1 disk 
+sdb     8:16   0 159.4M  1 disk 
+sdc     8:32   0     4G  0 disk [SWAP]
+sdd     8:48   0 141.6M  0 disk 
+sde     8:64   0     1T  0 disk 
+sdf     8:80   0     1T  0 disk /var/lib/docker
+                                /mnt/wslg/distro
+                                /
+
+===== getconf CLK_TCK =====
+100
+
+===== ambiente de execução =====
+WSL2 (kernel Linux dentro de VM gerenciada pelo Windows)
+/proc/version: Linux version 6.18.33.2-microsoft-standard-WSL2 (root@f1bbfb02316b) (gcc (GCC) 13.2.0, GNU ld (GNU Binutils) 2.41) #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026
+NOTA: em WSL2 o relógio de parede (CLOCK_REALTIME) pode saltar dezenas de
+segundos ao ressincronizar com o host. Por isso 04-bench.sh mede durações
+com /proc/uptime (CLOCK_MONOTONIC). Registrar isso em Limitações.
+
+===== versões =====
+ollama: ollama version is 0.34.0
+docker: Docker version 29.8.0, build 88096ef
+python3: Python 3.14.4
+curl: curl 8.18.0 (x86_64-pc-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 brotli/1.2.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.2 libssh2/1.11.1 nghttp2/1.68.0 librtmp/2.3 mit-krb5/1.22.1 OpenLDAP/2.6.10
+jq: jq-1.8.1
+
+===== ollama list =====
+NAME        ID              SIZE      MODIFIED       
+qwen3:8b    500a1f067a9f    5.2 GB    57 seconds ago    
+
+===== tamanho em disco dos modelos =====
+4.9G	/home/user/.ollama/models
+
+===== GPU =====
+nvidia-smi não encontrado — execução em CPU. Registrar isso como limitação.
+
+===== docker ps =====
+CONTAINER ID   IMAGE                                COMMAND           CREATED          STATUS                    PORTS                                         NAMES
+21a388c7f3ae   ghcr.io/open-webui/open-webui:main   "bash start.sh"   40 seconds ago   Up 40 seconds (healthy)   0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp   open-webui
+
+===== ollama show qwen3:8b =====
+  Model
+    architecture        qwen3     
+    parameters          8.2B      
+    context length      40960     
+    embedding length    4096      
+    quantization        Q4_K_M    
+
+  Capabilities
+    completion    
+    tools         
+    thinking      
+
+  Parameters
+    top_k             20                
+    top_p             0.95              
+    repeat_penalty    1                 
+    stop              "<|im_start|>"    
+    stop              "<|im_end|>"      
+    temperature       0.6               
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+    ...                          
+
+
+===== digest da imagem do Open WebUI =====
+ghcr.io/open-webui/open-webui@sha256:1a6399d237dc392a2313e0ca826020b3fd5d22536357840eb63393d18dc8b924
