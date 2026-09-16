@@ -1,4 +1,33 @@
+# --- Pesos de modelo: nunca versionar (Seção 8.2 do enunciado) ---
 *.gguf
+*.bin
+*.safetensors
+*.pt
+*.onnx
+
+# --- Segredos ---
 .env
-logs/
-data/
+.env.*
+*.key
+*.pem
+*_token
+credentials*
+
+# --- Artefatos pesados / gerados ---
+*.zip
+*.tar
+*.tar.gz
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+
+# ATENÇÃO: data/ e logs/ SÃO entregáveis (CSVs de resultado, strace, logs
+# do Ollama e do Open WebUI) e devem ser versionados. Não adicione regras
+# que os excluam por completo. Apenas artefatos temporários ficam de fora:
+data/tmp/
+logs/*.raw
