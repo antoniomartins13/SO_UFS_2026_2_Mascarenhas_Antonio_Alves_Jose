@@ -1,6 +1,12 @@
-# Os scripts são executados em Linux; CRLF quebraria o shebang.
-*.sh text eol=lf
-*.md text eol=lf
-*.csv text eol=lf
-*.txt text eol=lf
-*.pdf binary
+# Os artefatos sao gerados e consumidos em Linux; CRLF quebraria o shebang
+# dos scripts e sujaria os diffs dos dados.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.csv  text eol=lf
+*.txt  text eol=lf
+*.json text eol=lf
+*.meta text eol=lf
+*.log  text eol=lf
+*.pdf  binary
+*.png  binary
