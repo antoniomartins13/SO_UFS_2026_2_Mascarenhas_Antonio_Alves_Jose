@@ -1,0 +1,1 @@
+Explique em poucas frases o que é memoização em programação e dê um exemplo simples.
